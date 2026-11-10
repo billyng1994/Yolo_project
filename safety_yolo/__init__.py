@@ -1,0 +1,1 @@
+"""Local detection workflow. Heavy dependencies load only when needed."""

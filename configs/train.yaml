@@ -1,0 +1,18 @@
+# All relative paths are resolved from the directory where you run the command.
+model: yolo26n.pt
+data: data/construction-site-safety/data.yaml
+epochs: 100
+imgsz: 640
+batch: 16
+# Omit device/gpus to select CUDA 0, then MPS, then CPU.
+# Omit workers for the conservative platform-specific policy.
+cache: false
+amp: true
+seed: 0
+project: runs/train
+name: safety
+patience: 25
+optimizer: auto
+lr0: 0.01
+plots: true
+deterministic: true

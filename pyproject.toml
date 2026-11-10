@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling==1.33.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "safety-yolo"
+version = "0.1.0"
+description = "Verified local construction safety detection workflow"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "ultralytics==8.4.208",
+    "pillow==13.0.0",
+    "pyyaml==6.0.3",
+    "torch==2.14.1",
+    "torchvision==0.29.1",
+    "cloudpickle==3.1.1",
+]
+
+[dependency-groups]
+dev = ["pytest==9.2.0"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["safety_yolo"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["smoke: opt-in real CPU train/predict/validate"]
